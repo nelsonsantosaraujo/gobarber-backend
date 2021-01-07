@@ -44,10 +44,12 @@ class ListProviderAppointmentsService {
         },
       );
 
+      console.log('buscou no banco2');
+
       await this.cacheProvider.save(cacheKey, classToClass(appointments));
     }
 
-    return appointments;
+    return classToClass(appointments);
   }
 }
 
