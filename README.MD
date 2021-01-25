@@ -1,69 +1,108 @@
-# Recuperação de senha
+<h1 align="center">
+  <img alt="Logo" src="https://ik.imagekit.io/t58nj4hrrhv/logo_o0SeXCgx_Q.svg" alt="GoBarber Hairdcuts and Shaves">
+</h1>
 
-**RF**
+<h3 align="center">
+  API REST para o projeto GoBarber
+</h3>
 
-- O usuário deve poder recuperar sua senha informando o seu e-mail;
-- O usuário deve receber um e-mail com instruções de recuperação de senha;
-- O usuário deve poder resetar sua senha;
+## 📓 Sobre o projeto ***GoBarber***
 
-**RNF**
+GoBarber é um projeto para barbearias realizarem a gestão dos agendamentos de seus prestadores de serviço e seus clientes.
 
-- Utilizar Mailtrap para testar envios em ambiente de dev;
-- Utilizar Amazon SES para envios em produção;
-- O envio de e-mails deve acontecer em segundo plano (background job);
+Foi desenvolvido durante o ***Bootcamp 14*** da ***[Rocketseat](https://rocketseat.com.br)***
 
-**RN**
+Esta API tem como objetivo fornece e armazenar no banco de dados os dados relacionados aos usuários/fornecedores e seus agendamentos.
 
-- O link enviado por email para resetar senha, deve expirar em 2h;
-- O usuário precisa confirmar a nova senha ao resetar sua senha;
+Para ver a API em funcionando utilize os clientes abaixo:
 
-# Atualização do perfil
+- Para prestadores de serviço ***Cliente web:*** [GoBarber Web](https://github.com/nelsonsantosaraujo/gobarber-web)
+- Para usuários (clientes) ***Cliente mobile:*** [GoBarber Mobile](https://github.com/nelsonsantosaraujo/gobarber-mobile)
 
-**RF**
+Ou use as rotas da API no ***Insomnia***
 
-- O usuário deve poder atualizar seu nome, email e senha;
+1. Download [Insomnia](https://insomnia.rest/download/)
+2. Importe as rotas dentro do Insomnia [Rotas GoBarber](https://github.com/nelsonsantosaraujo/gobarber-backend/blob/main/Insomnia_gobarber.json)
 
-**RN**
+---
 
-- O usuário não pode alterar seu email para um email já utilizado;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha, o usuário precisa confirmar a nova senha;
+## 🚀 Tecnologias
 
-# Painel do prestador
+Abaixo as tecnologias utilizadas para construção da API
 
-**RF**
+- [Node.js](https://nodejs.org/en/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Express](https://expressjs.com/pt-br/)
+- [TypeORM](https://typeorm.io/#/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [MongoDB](https://www.mongodb.com/)
+- [Redis](https://redis.io/)
 
-- O usuário deve poder listar seus agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas;
+---
 
-**RNF**
+## 💻 Configurações necessárias
 
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo-real utilizando Socket.io;
+### **Requisitos**
 
-**RN**
+Antes de começar instale os programas abaixo:
 
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/)
+- [Docker](https://www.docker.com/docker-community)
 
-# Agendamento de serviços
+### **Clone do projeto**
 
-**RF**
+```bash
+# Execute o comando git clone para realizar o clone do repositório
+$ git clone https://github.com/nelsonsantosaraujo/gobarber-backend.git
+# Entre na pasta do repositório clonado
+$ cd gobarber-backend
+```
 
-- O usuário deve poder listar todos prestadores de serviço cadastrados;
-- O usuário deve poder listar os dias de um mês com pelo menos um horário disponível de um prestador;
-- O usuário deve poder listar horários disponíveis em um dia específico de um prestador;
-- O usuário deve poder realizar um novo agendamento com um prestador;
+### **Iniciando o projeto**
 
-**RNF**
+```bash
+# Rode yarn para instalar as dependências
+$ yarn
 
-- A listagem de prestadores deve ser armazenada em cache;
+# Na raiz do projeto crie uma copia do arquivo .env.example
+# Altere o nome da copia para .env
+# Preencha as variáveis ambiente
+$ cp .env.example .env
 
-**RN**
+# Crie uma instância do postgresql para armazenamento dos dados da API
+$ docker run --name gobarber-postgres -e POSTGRES_USER=postgres \
+              -e POSTGRES_DB=gostack_gobarber \
+              -e POSTGRES_PASSWORD=docker \
+              -p 5432:5432 -d postgres
 
-- Os agendamentos devem estar disponíveis entre 8h às 18h (Primeiro às 8h, último às 17h);
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo;
-- Cada agendamento deve durar 1h exatamente;
-- O usuário não pode agendar em um horário já ocupado;
+# Crie uma instância do MongoDB para armazenar as notificações da API
+$ docker run --name gobarber-mongodb -p 27017:27017 -d -t mongo
+
+# Crie uma instância do Redis para armazenar o cache da API
+$ docker run --name gobarber-redis -p 6379:6379 -d -t redis:alpine
+
+# Na raiz do projeto crie uma copia do arquivo ormconfig.example.json
+# Altere o nome da copia para ormconfig.json
+# Preencha as configurações da base de dados
+$ cp ormconfig.example.json ormconfig.json
+
+# Após instalar as dependências e iniciar as instâncias dos banco de dados execute o comando abaixo para realizar a criação das tabelas no postgresql
+$ yarn typeorm migration:run
+
+# Para iniciar o projeto em modo de desenvolvimento execute
+$ yarn dev:server
+
+# Pronto a API está pronta para uso.
+```
+
+---
+
+## 📝 Licença
+
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações.
+
+---
+
+Feito por Nelson Araújo 📃  [Linkedin](https://www.linkedin.com/in/nelsonsantosaraujo/)
