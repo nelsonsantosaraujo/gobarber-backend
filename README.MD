@@ -88,7 +88,8 @@ $ docker run --name gobarber-redis -p 6379:6379 -d -t redis:alpine
 # Preencha as configurações da base de dados
 $ cp ormconfig.example.json ormconfig.json
 
-# Após instalar as dependências e iniciar as instâncias dos banco de dados execute o comando abaixo para realizar a criação das tabelas no postgresql
+# Após instalar as dependências e iniciar as instâncias dos banco de dados
+#execute o comando abaixo para realizar a criação das tabelas no postgresql
 $ yarn typeorm migration:run
 
 # Para iniciar o projeto em modo de desenvolvimento execute
