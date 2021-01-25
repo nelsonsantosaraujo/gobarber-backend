@@ -2,11 +2,25 @@
   <img alt="Logo" src="https://ik.imagekit.io/t58nj4hrrhv/logo_o0SeXCgx_Q.svg" alt="GoBarber Hairdcuts and Shaves">
 </h1>
 
-<h3 align="center">
-  API REST para o projeto GoBarber
-</h3>
+<h1 align="center">
+    GoBarber - NodeJS API
+</h1>
+<p align="center">Aplicação para cadastro e gerenciamento de agendamentos para barbearias</p>
 
-## 📓 Sobre o projeto ***GoBarber***
+
+<p align="center">
+ <a href="#sobre-o-projeto">Sobre o Projeto</a> •
+ <a href="#tecnologias">Tecnologias</a> •
+ <a href="#configurações-necessárias">Configurações necessárias</a> •
+ <a href="#licença">Licença</a> •
+ <a href="#autor">Autor</a>
+</p>
+
+<h4 align="center">
+	🚧  GoBarber 🚀 Projeto para estudo finalizado 🚧
+</h4>
+
+## Sobre o projeto
 
 GoBarber é um projeto para barbearias realizarem a gestão dos agendamentos de seus prestadores de serviço e seus clientes.
 
@@ -26,7 +40,7 @@ Ou use as rotas da API no ***Insomnia***
 
 ---
 
-## 🚀 Tecnologias
+## Tecnologias
 
 Abaixo as tecnologias utilizadas para construção da API
 
@@ -40,7 +54,7 @@ Abaixo as tecnologias utilizadas para construção da API
 
 ---
 
-## 💻 Configurações necessárias
+## Configurações necessárias
 
 ### **Requisitos**
 
@@ -100,10 +114,15 @@ $ yarn dev:server
 
 ---
 
-## 📝 Licença
+## Licença
 
 Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações.
 
 ---
 
-Feito por Nelson Araújo 📃  [Linkedin](https://www.linkedin.com/in/nelsonsantosaraujo/)
+### Autor
+
+Feito por Nelson Araújo 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Nelson-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/nelsonsantosaraujo/)
+[![Gmail Badge](https://img.shields.io/badge/-nelsonsantosaraujo@hotmail.com-red?style=flat-square&link=mailto:nelsonsantosaraujo@hotmail.com)](mailto:nelsonsantosaraujo@hotmail.com)
