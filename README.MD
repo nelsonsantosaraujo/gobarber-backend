@@ -21,7 +21,7 @@ Para ver a API em funcionando utilize os clientes abaixo:
 
 Ou use as rotas da API no ***Insomnia***
 
-1. Download [Insomnia](https://insomnia.rest/download/)
+1. Download [Insomnia Core](https://insomnia.rest/download/)
 2. Importe as rotas dentro do Insomnia [Rotas GoBarber](https://github.com/nelsonsantosaraujo/gobarber-backend/blob/main/Insomnia_gobarber.json)
 
 ---
